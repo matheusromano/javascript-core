@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For in/off Samples</title>
+  </head>
+  <body>
+    <button onclick="forInSample();">For/in Samples</button>
+    <button onclick="forOfSample();">For/of Samples</button>
+    <button onclick="loopStringSample();">Looping over a string</button>
+
+    <script>
+      "use strict";
+
+      // Using a for/in loop, thats iterate over only one object
+      function forInSample() {
+        let product = {
+          productId: 680,
+          name: "Hl road Frame - Black, 58",
+          productNumber: "FR-R92B-58",
+          color: "Black",
+          standartCost: 1058.56,
+          calculateGrossProfit: function () {
+            return this.listPrice - this.standartCost;
+          },
+        };
+
+        for (const key in product) {
+          console.log("'" + key + "'=" + product[key]);
+        }
+      }
+
+      //   Using for/of, to iterato over a list of objects
+      let _product = [
+        {
+          productId: 680,
+          name: "Hl road Frame - Black, 58",
+          productNumber: "FR-R92B-58",
+          color: "Black",
+          standartCost: 1058.56,
+        },
+        {
+          productId: 125,
+          name: "Hl road glass - Blue, 58",
+          productNumber: "FR-Y851-78",
+          color: "Yellow",
+          standartCost: 7845.33,
+        },
+        {
+          productId: 965,
+          name: "LJ rest flat - Red, 41",
+          productNumber: "HY-D441-96",
+          color: "Red",
+          standartCost: 10450.33,
+        },
+      ];
+
+      function forOfSample() {
+        for (const anything of _product) {
+          console.log(JSON.stringify(anything));
+        }
+      }
+
+      //   Looping over a string, strings are also iterable objects
+      function loopStringSample() {
+        let productName = "Venture Trucks";
+        let letters = "";
+
+        for (let letter of productName) {
+          letters += letter;
+        }
+        console.log(letters);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short-circuit example</title>
+</head>
+<body>
+    <button onclick="shortCircuitAndSample();"> Short Circuit &&</button>
+    <button onclick="shortCircuitOrSample();"> Short Circuit ||</button>
+    <script>
+        function shortCircuitAndSample() {
+            let result;
+
+            // if first result is false, the second part is never evaluated
+            result = isColorRed("Red") && isGreaterThan1400(1400)
+            
+        }
+
+        function isColorRed(value) {
+            console.log("In the isColorRed() function");
+            return value === "Red"
+        }
+
+        function isGreaterThan1400(value) {
+            console.log("In the isGreaterThan1400() function");
+            return value > 1400;
+        }
+
+
+        function shortCircuitOrSample() {
+            let result;
+
+            // if one of then is true the result shows the value
+            result = isColorRed("Red") || isGreaterThan1400(1400)
+            
+        }
+
+        function isColorRed(value) {
+            console.log("In the isColorRed() function");
+            return value === "Red"
+        }
+
+        function isGreaterThan1400(value) {
+            console.log("In the isGreaterThan1400() function");
+            return value > 1400;
+        }
+    </script>
+    
+</body>
+</html>

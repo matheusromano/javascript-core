@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break - Continue samples</title>
+  </head>
+  <body>
+    <button onclick="breakSample()">Break</button>
+    <button onclick="continueSample()">Continue</button>
+    <button onclick="labelSample()">Labeled statement</button>
+
+    <script>
+      "use strict";
+
+      let _product = [
+        {
+          productId: 680,
+          name: "Hl road Frame - Black, 58",
+          productNumber: "FR-R92B-58",
+          color: "Black",
+          standartCost: 5,
+        },
+        {
+          productId: 965,
+          name: "LJ rest flat - Red, 41",
+          productNumber: "HY-D441-96",
+          color: "Red",
+          standartCost: 4,
+        },
+        {
+          productId: 125,
+          name: "Hl road glass - Blue, 58",
+          productNumber: "FR-Y851-78",
+          color: "Yellow",
+          standartCost: 15,
+        },
+      ];
+
+      //   Use the break statement
+      function breakSample() {
+        for (const item of _product) {
+          if (item.standartCost > 10) {
+            break;
+          }
+          console.log(JSON.stringify(item));
+        }
+      }
+
+      //   Use the continue statement
+      function continueSample() {
+        for (const item of _product) {
+          if (item.standartCost < 100) {
+            continue;
+          }
+          console.log(JSON.stringify(item));
+        }
+      }
+
+      
+    //   the labeled statement is everything we call "even"
+    // the return of the function its not the top of loop,
+    // is the label, in this case even (Its not a good practice to do that)
+      function labelSample() {
+        even: for (let index = 1; index <= 10; index++) {
+          if (index % 2 == 1) {
+            continue even;
+          }
+          console.log(index);
+        }
+        1;
+      }
+    </script>
+  </body>
+</html>

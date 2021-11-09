@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Statement samples</title>
+  </head>
+  <body>
+    <button onclick="multipleCase();">Multiple Case Switch Statement</button>
+    <button onclick="forgetBreak();">Forget a break</button>
+    <button onclick="strictComparison();">Strict Comparison</button>
+    <button onclick="fixScopeProblem();">Fix the scope Problem</button>
+    <script>
+      //   function simpleSwitch() {
+      //     let productId = 6;
+
+      //     switch (productId) {
+      //       case 1:
+      //         console.log("Product 1");
+      //         break;
+      //       case 2:
+      //         console.log("Product 2");
+      //         break;
+      //       default:
+      //         break;
+      //     }
+      //   }
+
+      function multipleCase() {
+        let color = "Red";
+
+        switch (color) {
+          case "Red":
+          case "Pink":
+            console.log("The color is red");
+            break;
+          case "Blue":
+          case "Ligth Blue":
+          case "Dark Blue":
+            console.log("The color is blue");
+            break;
+          case "Gray":
+          case "Grey":
+            console.log("The color is grey");
+            break;
+          default:
+            console.log("Unknow color");
+            break;
+        }
+      }
+
+      function forgetBreak() {
+        let productId = 2;
+
+        switch (productId) {
+          case 1:
+            console.log("HL Road Frame - Black, 58");
+            break;
+          // if you forget to put the brake the javascript will
+          // execute the continuous
+          case 2:
+            console.log("Sport-100 Helmet, Red");
+
+          case 3:
+            console.log("Mountain Bike Socks, M");
+            break;
+          default:
+            console.log("Unknow product");
+            break;
+        }
+      }
+
+      function strictComparison() {
+        // The value and Type must to match
+        let productId = "2";
+
+        switch (productId) {
+          case 1:
+            console.log("HL Road Frame - Black, 58");
+            break;
+          case "2":
+            console.log("Sport-100 Helmet, Red");
+            break;
+          case 3:
+            console.log("Mountain Bike Socks, M");
+            break;
+          default:
+            console.log("Unknow product");
+            break;
+        }
+      }
+
+      function fixScopeProblem() {
+        // to fix the scope problem with put de { } after
+        // declare de case
+        let productId = "2";
+
+        switch (productId) {
+          case 1: {
+            let message = "HL Road Frame - Black, 58";
+            console.log(message);
+            break;
+          }
+          case "2": {
+            let message = "Sport-100 Helmet, Red";
+            console.log(message);
+            break;
+          }
+          case 3: {
+            let message = "Mountain Bike Socks, M";
+            console.log(message);
+            break;
+          }
+          default: {
+            let message = "Unknow product";
+            console.log(message);
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
